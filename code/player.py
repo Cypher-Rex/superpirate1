@@ -20,7 +20,7 @@ class Player(pygame.sprite.Sprite):
 
 		# player movement
 		self.direction = pygame.math.Vector2(0,0)
-		self.speed = 8
+		self.speed = 5
 		self.gravity = 0.8
 		self.jump_speed = -16
 		self.collision_rect = pygame.Rect(self.rect.topleft,(50,self.rect.height))
@@ -134,7 +134,7 @@ class Player(pygame.sprite.Sprite):
 	def get_damage(self):
 		if not self.invincible:
 			self.hit_sound.play()
-			self.change_health(-10)
+			self.change_health(-20)
 			self.invincible = True
 			self.hurt_time = pygame.time.get_ticks()
 
